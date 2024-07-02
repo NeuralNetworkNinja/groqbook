@@ -217,7 +217,7 @@ def generate_book_structure(prompt: str):
     Returns book structure content as well as total tokens and total time for generation.
     """
     completion = st.session_state.groq.chat.completions.create(
-        model="llama3-70b-8192",
+        model="mixtral-8x7b-32768",
         messages=[
             {
                 "role": "system",
@@ -229,7 +229,7 @@ def generate_book_structure(prompt: str):
             }
         ],
         temperature=0.3,
-        max_tokens=8000,
+        max_tokens=29000,
         top_p=1,
         stream=False,
         response_format={"type": "json_object"},
